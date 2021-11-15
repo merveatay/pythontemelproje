@@ -1,0 +1,13 @@
+
+def flatten(a): #flatten fonk tanımlama
+    new_list = [] #flattened a için boş liste tanımlama
+    for item in a: #a listesindeki item'ler sırayla taranır
+        if isinstance(item,a): #taranan item'in kendisi de liste ise bloğa girilir
+          new_list.extend(flatten(item)) #liste şeklinde olan item flatten edilerek, önceden flatten edilmiş listenin sonuna eklenir
+        else:
+            new_list.append(item) #taranan item liste değilse flatten edilmiş listenin sonuna eklenir
+    return new_list
+
+
+List = [[1, 'a', ['cat'], 2], [[[3]], 'dog'], 4, 5]
+print(flatten(List))

@@ -1,0 +1,10 @@
+
+def reversed(a):
+    a.reverse() #reverse metodu ile listeyi ters çevirir
+    for item in a: #listenin elemanlarını tarar, nested olanlara reversed fonskiyonunu tekrar uygular
+        if isinstance(item,list):
+            reversed(item)
+    return a
+
+List = [[1,2], [3, 4], [5, 6, 7]]
+print(reversed(List))
